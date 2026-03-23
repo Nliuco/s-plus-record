@@ -1,0 +1,283 @@
+/**
+ * 主题令牌：默认夜间；`html[data-theme="light"]` 为日间。
+ * 切换动画见文件末尾的 View Transitions（root）。
+ */
+:root {
+  color-scheme: dark;
+
+  --t-bg-deep: #121212;
+  --t-bg-base: #1e1e1e;
+  --t-bg-raised: #252525;
+  --t-bg-modal: #1c1c1f;
+  --t-bg-modal-hdr-t: #252528;
+  --t-bg-modal-hdr-b: #1e1e22;
+  --t-bg-input: #121212;
+  --t-bg-tab-active: #1a2e24;
+  --t-bg-reveal: rgba(0, 0, 0, 0.35);
+  --t-bg-pin: rgba(255, 255, 255, 0.025);
+  --t-bg-pin-hover: rgba(255, 255, 255, 0.055);
+  --t-bg-row-hover: rgba(255, 255, 255, 0.04);
+  --t-bg-close-hover: rgba(255, 255, 255, 0.08);
+  --t-bg-sort-trigger: rgba(0, 0, 0, 0.32);
+  --t-bg-sort-item-hover: rgba(255, 255, 255, 0.06);
+  --t-bg-chip-remove-hover: rgba(255, 255, 255, 0.06);
+
+  --t-border: #444;
+  --t-border-soft: rgba(255, 255, 255, 0.1);
+  --t-border-ghost: #555;
+  --t-border-row: #333;
+  --t-border-alias: #3d4d42;
+  --t-border-alias-panel: #2a3d32;
+
+  --t-text: #eee;
+  --t-text-2: #eaeaea;
+  --t-text-3: #ccc;
+  --t-text-4: #c4c4c4;
+  --t-text-muted: #aaa;
+  --t-text-dim: #888;
+  --t-text-faint: #666;
+  --t-text-sort: #8a8a8a;
+  --t-text-body: #bbb;
+  --t-text-dialog: #ddd;
+  --t-text-subtitle: #b0b0b0;
+  --t-text-meta-hint: #6a7a72;
+  --t-text-lcu-muted: #7a8a82;
+  --t-text-lcu-step: #9aaba2;
+  --t-text-reveal-k: #7a9086;
+  --t-text-reveal-v: #e0e8e4;
+  --t-text-alias-mgmt: #9ccc9c;
+  --t-text-alias-sub: #5c6b63;
+  --t-text-alias-label: #7a8f84;
+  --t-text-chip: #8a9e92;
+  --t-text-chip-mine: #c5e0d0;
+
+  --t-title-gold: #d0a85c;
+  --t-accent-text: #b8e0c8;
+  --t-accent-text-2: #c5edd4;
+  --t-accent-muted: #7a9086;
+  --t-accent-link-hover: #b8e0c8;
+  --t-stats-label: #a8c4b4;
+  --t-stats-value: #7bdc9a;
+  --t-stats-main: #e8e8e8;
+  --t-stats-total: #c8c8c8;
+  --t-stats-unit: #9a9a9a;
+  --t-stats-sep: #666;
+  --t-stats-meta: #6a7a72;
+  --t-lcu-title: #c5edd4;
+  --t-lcu-reveal-title: #b8d4c8;
+
+  --t-btn-primary: #2d6a4f;
+  --t-btn-secondary: #37474f;
+
+  --t-insight-bg: #2a2520;
+  --t-insight-border: #5d4e37;
+  --t-insight-text: #e8d4a8;
+
+  --t-catalog-warn: #e6c35c;
+  --t-empty: #999;
+  --t-warn: #e6a07a;
+  --t-success: #8bc34a;
+  --t-error-border: #c0392b;
+  --t-error-text: #f5b7b1;
+
+  --t-shadow-menu: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.35);
+  --t-shadow-dialog: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.35);
+
+  --t-overlay: rgba(0, 0, 0, 0.72);
+  --t-accent-12: rgba(45, 106, 79, 0.12);
+  --t-accent-22: rgba(45, 106, 79, 0.22);
+  --t-accent-25: rgba(45, 106, 79, 0.25);
+  --t-accent-30: rgba(45, 106, 79, 0.3);
+  --t-accent-35: rgba(45, 106, 79, 0.35);
+  --t-accent-42: rgba(45, 106, 79, 0.42);
+  --t-accent-45: rgba(45, 106, 79, 0.45);
+  --t-accent-50: rgba(45, 106, 79, 0.5);
+  --t-accent-55: rgba(45, 106, 79, 0.55);
+  --t-accent-65: rgba(45, 106, 79, 0.65);
+  --t-accent-75: rgba(45, 106, 79, 0.75);
+  --t-accent-85: rgba(45, 106, 79, 0.85);
+
+  --t-stats-card: linear-gradient(145deg, #1e2a22 0%, #1a221c 100%);
+  --t-stats-inset: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+
+  --t-alias-panel-bg: #1a1f1c;
+  --t-alias-panel-border: #2a3d32;
+  --t-alias-panel-divider: #2a332e;
+  --t-alias-toggle: #8fbc9a;
+  --t-chip-builtin-bg: #222826;
+  --t-chip-builtin-border: #3d4a44;
+  --t-chip-mine-bg: #243028;
+  --t-chip-mine-border: #355045;
+  --t-avatar-ph: #333;
+
+  --t-splash-dialog: #1a1a1a;
+  --t-splash-dialog-border: #333;
+  --t-splash-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+  --t-splash-hdr: linear-gradient(180deg, #252525 0%, #1e1e1e 100%);
+  --t-splash-hdr-aliases: #5d7a6a;
+  --t-splash-hdr-text: #a8c4b4;
+  --t-splash-tag-empty-bg: #2a2a2a;
+  --t-splash-img-bg: #0d0d0d;
+  --t-splash-placeholder-bg: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+  --t-splash-placeholder-text: #777;
+  --t-splash-spinner-ring: #2a2a2a;
+  --t-splash-spinner-top: #3d8b6a;
+
+  --t-pin-muted: rgba(255, 255, 255, 0.38);
+  --t-pin-hover: rgba(255, 255, 255, 0.72);
+  --t-pin-border: rgba(255, 255, 255, 0.08);
+  --t-pin-border-hover: rgba(255, 255, 255, 0.14);
+  --t-pin-on: #9dd4b0;
+
+  --t-avatar-bg: #111;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --t-bg-deep: #e8ece9;
+  --t-bg-base: #f1f5f2;
+  --t-bg-raised: #ffffff;
+  --t-bg-modal: #fafcfb;
+  --t-bg-modal-hdr-t: #f0f4f1;
+  --t-bg-modal-hdr-b: #e6ebe7;
+  --t-bg-input: #ffffff;
+  --t-bg-tab-active: #dcefe4;
+  --t-bg-reveal: rgba(15, 45, 30, 0.06);
+  --t-bg-pin: rgba(0, 40, 25, 0.04);
+  --t-bg-pin-hover: rgba(0, 40, 25, 0.08);
+  --t-bg-row-hover: rgba(0, 50, 30, 0.05);
+  --t-bg-close-hover: rgba(0, 0, 0, 0.06);
+  --t-bg-sort-trigger: rgba(0, 35, 22, 0.06);
+  --t-bg-sort-item-hover: rgba(0, 0, 0, 0.05);
+  --t-bg-chip-remove-hover: rgba(0, 0, 0, 0.05);
+
+  --t-border: #b9c5be;
+  --t-border-soft: rgba(0, 0, 0, 0.1);
+  --t-border-ghost: #a8b5ad;
+  --t-border-row: #d5ded8;
+  --t-border-alias: #b5c4bb;
+  --t-border-alias-panel: #a8bfb0;
+
+  --t-text: #142018;
+  --t-text-2: #1c2820;
+  --t-text-3: #2c3830;
+  --t-text-4: #3d4d42;
+  --t-text-muted: #4d5e52;
+  --t-text-dim: #5c6e62;
+  --t-text-faint: #6f8074;
+  --t-text-sort: #5a6b60;
+  --t-text-body: #3a4a40;
+  --t-text-dialog: #2a362e;
+  --t-text-subtitle: #4d5e54;
+  --t-text-meta-hint: #5c6d62;
+  --t-text-lcu-muted: #5c6d62;
+  --t-text-lcu-step: #4d5e54;
+  --t-text-reveal-k: #3d6b52;
+  --t-text-reveal-v: #1a3024;
+  --t-text-alias-mgmt: #2d6b45;
+  --t-text-alias-sub: #5c6d62;
+  --t-text-alias-label: #4d6054;
+  --t-text-chip: #4d6054;
+  --t-text-chip-mine: #1e4d32;
+
+  --t-title-gold: #9a6f2a;
+  --t-accent-text: #145a3a;
+  --t-accent-text-2: #0d4a2e;
+  --t-accent-muted: #3d6b52;
+  --t-accent-link-hover: #145a3a;
+  --t-stats-label: #2d5a42;
+  --t-stats-value: #1a8c52;
+  --t-stats-main: #1a2820;
+  --t-stats-total: #2c3830;
+  --t-stats-unit: #5c6d62;
+  --t-stats-sep: #8a9a90;
+  --t-stats-meta: #5c6d62;
+  --t-lcu-title: #145a3a;
+  --t-lcu-reveal-title: #1a5c3e;
+
+  --t-btn-primary: #237a55;
+  --t-btn-secondary: #4a6670;
+
+  --t-insight-bg: #f5f0e4;
+  --t-insight-border: #d4c4a0;
+  --t-insight-text: #6b5420;
+
+  --t-catalog-warn: #b8860a;
+  --t-empty: #7a8a80;
+  --t-warn: #c45c28;
+  --t-success: #2e7d32;
+  --t-error-border: #c0392b;
+  --t-error-text: #922b21;
+
+  --t-shadow-menu: 0 12px 40px rgba(20, 40, 30, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  --t-shadow-dialog: 0 20px 56px rgba(20, 40, 30, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.06);
+
+  --t-overlay: rgba(25, 45, 35, 0.4);
+  --t-accent-12: rgba(35, 122, 85, 0.12);
+  --t-accent-22: rgba(35, 122, 85, 0.18);
+  --t-accent-25: rgba(35, 122, 85, 0.2);
+  --t-accent-30: rgba(35, 122, 85, 0.22);
+  --t-accent-35: rgba(35, 122, 85, 0.28);
+  --t-accent-42: rgba(35, 122, 85, 0.35);
+  --t-accent-45: rgba(35, 122, 85, 0.38);
+  --t-accent-50: rgba(35, 122, 85, 0.45);
+  --t-accent-55: rgba(35, 122, 85, 0.5);
+  --t-accent-65: rgba(35, 122, 85, 0.55);
+  --t-accent-75: rgba(35, 122, 85, 0.65);
+  --t-accent-85: rgba(35, 122, 85, 0.75);
+
+  --t-stats-card: linear-gradient(145deg, #e8f4ec 0%, #dceae2 100%);
+  --t-stats-inset: 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+
+  --t-alias-panel-bg: #eef6f0;
+  --t-alias-panel-border: #b8d4c4;
+  --t-alias-panel-divider: #c5ddd0;
+  --t-alias-toggle: #2d6b45;
+  --t-chip-builtin-bg: #e8f0ec;
+  --t-chip-builtin-border: #a8c4b4;
+  --t-chip-mine-bg: #dff0e6;
+  --t-chip-mine-border: #7ab89a;
+  --t-avatar-ph: #c8d4cc;
+
+  --t-splash-dialog: #fafcfb;
+  --t-splash-dialog-border: #c5d4cb;
+  --t-splash-shadow: 0 24px 80px rgba(20, 40, 30, 0.18);
+  --t-splash-hdr: linear-gradient(180deg, #f2f7f4 0%, #e8f0eb 100%);
+  --t-splash-hdr-aliases: #3d6b52;
+  --t-splash-hdr-text: #2d5a42;
+  --t-splash-tag-empty-bg: #eef2ef;
+  --t-splash-img-bg: #e8ece9;
+  --t-splash-placeholder-bg: linear-gradient(180deg, #f0f4f1 0%, #e4eae6 100%);
+  --t-splash-placeholder-text: #5c6d62;
+  --t-splash-spinner-ring: #c5d4cb;
+  --t-splash-spinner-top: #237a55;
+
+  --t-pin-muted: rgba(0, 40, 25, 0.35);
+  --t-pin-hover: rgba(0, 40, 25, 0.65);
+  --t-pin-border: rgba(0, 40, 25, 0.12);
+  --t-pin-border-hover: rgba(0, 40, 25, 0.2);
+  --t-pin-on: #1a7a4a;
+
+  --t-avatar-bg: #dce5df;
+}
+
+/**
+ * 主题切换动画：用 View Transitions 的 root 层做交叉淡化。
+ * 不再对 `.theme-smooth *` 全树 transition——英雄列表节点多时会造成主线程卡顿、渐变/box-shadow 也无法真正插值。
+ */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.55s;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "s-plus-record",
+  "version": "1.0.0",
+  "description": "英雄联盟 S+ 英雄追踪工具",
+  "type": "module",
+  "main": "out/main/index.js",
+  "author": "Pianone",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "vue-tsc && electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "npm run build && electron-builder --publish never",
+    "dist:win": "npm run build && electron-builder --win --publish never",
+    "icon:build": "node scripts/build-icon.mjs"
+  },
+  "build": {
+    "appId": "com.splusrecord.app",
+    "productName": "S+ Record",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable-${arch}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "axios": "^1.13.6",
+    "electron": "^29.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.0.0",
+    "pinia": "^3.0.4",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vue": "^3.5.30",
+    "vue-tsc": "^2.0.0"
+  }
+}
