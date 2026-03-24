@@ -19,7 +19,7 @@ import { useUserChampionAliasesStore } from '@renderer/stores/userChampionAliase
 import { useUserChampionPinsStore } from '@renderer/stores/userChampionPins'
 
 const store = useLcuStore()
-const { status, errorMessage, masteryList, sPlusEntries } = storeToRefs(store)
+const { status, errorMessage, masteryList } = storeToRefs(store)
 const { refresh } = useLcuMastery()
 const catalogStore = useChampionCatalogStore()
 const { totalChampions, loadError: catalogLoadError, sortedChampions, version } = storeToRefs(catalogStore)
@@ -36,6 +36,7 @@ const {
   selectSortMode,
   onSortGlobalPointerDown,
   parsedGradeSearch,
+  sPlusCountInCatalog,
   visibleRows,
   singleSearchInsight,
   splashTarget,
@@ -177,7 +178,7 @@ useHomePageLifecycle({
       <div class="stats-card" aria-label="本赛季 S+ 进度">
         <div class="stats-main">
           <span class="stats-label">本赛季 S+</span>
-          <span class="stats-value">{{ sPlusEntries.length }}</span>
+          <span class="stats-value">{{ sPlusCountInCatalog }}</span>
           <template v-if="totalChampions > 0">
             <span class="stats-sep">/</span>
             <span class="stats-total">{{ totalChampions }}</span>

@@ -80,6 +80,14 @@ export function useHomeChampionList(options: {
     }))
   )
 
+  /**
+   * 「本赛季 S+ xx / 总英雄」里的 xx：与列表每一行展示的评分同源（图鉴内英雄逐行计数）。
+   * 仅用 masteryMap 在已渲染英雄集合上累计，不把 masteryList 里可能存在的多余/污染条目算进总数。
+   */
+  const sPlusCountInCatalog = computed(
+    () => tableRows.value.filter((r) => r.grade === 'S+').length
+  )
+
   const parsedGradeSearch = computed(() => tryParseMasteryGradeSearchQuery(searchQuery.value))
 
   const filteredRows = computed(() => {
@@ -174,6 +182,7 @@ export function useHomeChampionList(options: {
     selectSortMode,
     onSortGlobalPointerDown,
     parsedGradeSearch,
+    sPlusCountInCatalog,
     visibleRows,
     singleSearchInsight,
     splashTarget,
