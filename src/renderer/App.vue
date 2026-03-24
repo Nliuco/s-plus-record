@@ -98,13 +98,13 @@ async function pickLayout(preset: WindowLayoutPreset): Promise<void> {
           </button>
         </li>
         <li role="none">
-          <button type="button" role="menuitem" class="layout-menu__item" @click="pickLayout('narrow-tall')">
-            窄条竖屏（靠右贴边）
+          <button type="button" role="menuitem" class="layout-menu__item" @click="pickLayout('narrow-tall-left')">
+            窄条竖屏（靠左贴边）
           </button>
         </li>
         <li role="none">
-          <button type="button" role="menuitem" class="layout-menu__item" @click="pickLayout('maximized')">
-            最大化（工作区）
+          <button type="button" role="menuitem" class="layout-menu__item" @click="pickLayout('narrow-tall')">
+            窄条竖屏（靠右贴边）
           </button>
         </li>
         <li role="none">

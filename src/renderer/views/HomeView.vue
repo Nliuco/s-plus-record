@@ -393,28 +393,27 @@ useHomePageLifecycle({
   min-height: 120px;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 0 0.35rem 0.25rem 0;
+  padding: 0 0.5rem 0.25rem;
   scrollbar-gutter: stable;
-  scrollbar-width: thin;
+  /* thin 在部分环境下过细；auto 与下方 WebKit 宽度配合更易感知 */
+  scrollbar-width: auto;
   scrollbar-color: var(--t-accent-55) transparent;
 }
 .list-scroll::-webkit-scrollbar {
-  width: 8px;
+  width: 16px;
 }
 .list-scroll::-webkit-scrollbar-track {
   background: transparent;
-  margin: 4px 0;
+  margin: 3px 0;
 }
 .list-scroll::-webkit-scrollbar-thumb {
   background: var(--t-accent-50);
   border-radius: 999px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  /* 不再用透明 border「缩细」滑块，彩色区域占满轨道宽度 */
+  min-height: 2.5rem;
 }
 .list-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--t-accent-75);
-  border: 2px solid transparent;
-  background-clip: padding-box;
 }
 .header {
   text-align: center;

@@ -9,6 +9,14 @@ import { registerWindowLayoutIpcHandlers } from './windowLayout'
 import { registerUpdateIpcHandlers } from './update/registerUpdateIpc'
 import { UpdateService } from './update/updateService'
 
+/**
+ * Windows 上 Chromium 常用覆盖式滚动条，会弱化或忽略 ::-webkit-scrollbar 宽度；
+ * 关闭后走经典滚动条，列表里自定义的轨道宽度才稳定可见。
+ */
+if (process.platform === 'win32') {
+  app.commandLine.appendSwitch('disable-features', 'OverlayScrollbar')
+}
+
 let updateService: UpdateService | null = null
 let realtimeGradePollTimer: NodeJS.Timeout | null = null
 

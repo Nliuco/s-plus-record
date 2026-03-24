@@ -227,6 +227,10 @@ function badgeSuffix(): string {
   align-items: center;
   gap: 0.45rem;
   width: 100%;
+  box-sizing: border-box;
+  /* 与列表左右缘留白对称；右侧略大以免评分贴滚动条 */
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
 }
 .pin-btn {
   flex-shrink: 0;
@@ -287,7 +291,8 @@ function badgeSuffix(): string {
   align-items: center;
   gap: 0.75rem;
   margin: 0;
-  padding: 0.5rem 0;
+  /* 悬停/点击高亮区内给头像留空，避免贴齐区域最左侧 */
+  padding: 0.5rem 0.3rem 0.5rem 0.55rem;
   border: none;
   background: transparent;
   color: inherit;
@@ -337,11 +342,14 @@ function badgeSuffix(): string {
   background: var(--t-bg-tab-active);
   color: var(--t-accent-text);
 }
+/* 固定评分列宽：管理别名竖向对齐；列内居中使 S / S+ 观感一致 */
 .badges {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   gap: 0;
+  min-width: 3rem;
 }
 .name-block {
   flex: 1;
@@ -430,7 +438,8 @@ function badgeSuffix(): string {
   gap: 0.75rem;
   width: 100%;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.55rem;
+  box-sizing: border-box;
   border: none;
   background: transparent;
   color: inherit;
@@ -440,7 +449,7 @@ function badgeSuffix(): string {
   cursor: not-allowed;
 }
 .alias-panel {
-  margin: 0 0 0.35rem 0;
+  margin: 0 0.55rem 0.35rem 0.55rem;
   padding: 0.55rem 0.65rem 0.65rem 0.5rem;
   border-radius: 8px;
   background: var(--t-alias-panel-bg);
