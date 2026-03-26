@@ -3,8 +3,6 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { registerLcuIpcHandlers } from './lcu/ipc'
-import { harvestRealtimeGrades } from './lcu/client'
-import { resolveLcuCredentials } from './lcu/sessionCredentials'
 import { registerWindowLayoutIpcHandlers } from './windowLayout'
 import { registerUpdateIpcHandlers } from './update/registerUpdateIpc'
 import { UpdateService } from './update/updateService'
@@ -18,7 +16,6 @@ if (process.platform === 'win32') {
 }
 
 let updateService: UpdateService | null = null
-let realtimeGradePollTimer: NodeJS.Timeout | null = null
 
 /** electron-vite 默认产出 index.mjs，若写死 index.js 会导致 preload 未加载、window.electron 不存在 */
 function resolvePreloadPath(): string {
@@ -124,28 +121,6 @@ app.whenReady().then(() => {
   // 启动后立刻后台检查/下载；弹窗由渲染层订阅并在下一次挂载时兜底展示
   void updateService.startOrContinueBackgroundDownload()
 
-  /**
-   * 后台实时采集熟练度评分（关键兜底）：
-   * - 定时读取 end-of-game / match-history delta 的瞬时数据；
-   * - 一旦捕获到更高评分会写入本地缓存；
-   * - 刷新时即使主接口滞后，也可由缓存补齐，尽量恢复“打一把好一把”体验。
-   */
-  const poll = async (): Promise<void> => {
-    try {
-      const { port, password } = resolveLcuCredentials()
-      const r = await harvestRealtimeGrades(port, password)
-      if (r.updated > 0) {
-        console.info('[lcu] realtime grade cache updated', { updated: r.updated })
-      }
-    } catch {
-      // 客户端未启动/凭证不可用时忽略
-    }
-  }
-  void poll()
-  realtimeGradePollTimer = setInterval(() => {
-    void poll()
-  }, 15_000)
-
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) {
       const w = createWindow()
@@ -160,10 +135,6 @@ app.whenReady().then(() => {
 
 // 当所有窗口都关闭时，退出应用（macOS 除外）
 app.on('window-all-closed', () => {
-  if (realtimeGradePollTimer) {
-    clearInterval(realtimeGradePollTimer)
-    realtimeGradePollTimer = null
-  }
   if (process.platform !== 'darwin') {
     app.quit()
   }
